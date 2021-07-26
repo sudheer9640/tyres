@@ -1,0 +1,35 @@
+
+<mat-form-field>
+  <mat-label>Select Year</mat-label>
+  <mat-select name="year" (selectionChange)="getMakes()" [(ngModel)]="selectedYear">
+  <mat-option *ngFor="let year of years$ | async" value="year">{{year}}</mat-option>
+</mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Select Make</mat-label>
+  <mat-select name="make" (selectionChange)="getModels()" [(ngModel)]="selectedMake">
+    <mat-option *ngFor="let make of makes$ | async" value="make">{{make}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Select Model</mat-label>
+  <mat-select name="model" (selectionChange)="getTrims()" [(ngModel)]="selectedModel">
+    <mat-option *ngFor="let model of models$ | async" value="model">{{model}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Select Trim</mat-label>
+  <mat-select name="trim" (selectionChange)="getTyres()" [(ngModel)]="selectedTrim">
+    <mat-option *ngFor="let trim of trims$ | async" value="trim">{{trim}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Select Tyre</mat-label>
+  <mat-select name="tyre" [(ngModel)]="selectedTyre">
+    <mat-option *ngFor="let tyre of tyres$ | async" value="tyre">{{tyre}}</mat-option>
+  </mat-select>
+</mat-form-field>
